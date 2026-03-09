@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingCart, Instagram, Facebook } from 'lucide-react';
+import { ShoppingCart, Instagram, Facebook, Palette } from 'lucide-react';
 
 export default function DolaSection({ theme, links }) {
   return (
@@ -59,5 +59,3 @@ export default function DolaSection({ theme, links }) {
     </section>
   );
 }
-
-import { Palette } from 'lucide-react';

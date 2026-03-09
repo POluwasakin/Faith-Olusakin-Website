@@ -10,13 +10,13 @@ export default function Document() {
 
         {/* Open Graph defaults */}
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/profile.webp" />
+        <meta property="og:image" content="/faith-profile.jpg" />
 
         {/* Twitter defaults */}
         <meta name="twitter:card" content="summary_large_image" />
 
         {/* Favicon */}
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <body className="antialiased">
         <Main />

@@ -22,11 +22,12 @@ import {
 export const siteConfig = {
   name: "Faith Olusakin",
   title: "Faith Olusakin | Elite Shopify Expert & Frontend Developer",
-  description: "Elite Shopify Expert & Frontend Developer helping brands grow with conversion-focused stores. Founder of Dola'f Fashion Collections.",
-  deploymentUrl: null, // Commented out per user request
+  description: "Elite Shopify Expert & Frontend Developer helping brands grow with conversion-focused stores. Founder of Dola's Collection.",
+  deploymentUrl: null, 
   phone: "0707 512 5812",
   email: "faitholusakin@gmail.com",
-  location: "Lagos, Nigeria"
+  location: "Lagos, Nigeria",
+  profileImg: "/faith-profile.jpg",
 };
 
 export const themeColors = {
@@ -46,7 +47,7 @@ export const navItems = [
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
   { id: "services", label: "Services" },
-  { id: "dola", label: "My Brand" },
+  { id: "dola", label: "Dola's Collection" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -59,7 +60,7 @@ export const socialLinks = [
   {
     label: "Upwork",
     href: "https://www.upwork.com/freelancers/~01f04ccc60e6bc595f",
-    Icon: Globe,
+    Icon: Globe, // We'll handle custom icons in the component or keep Lucide for now if user didn't provide SVG
   },
   {
     label: "Instagram",
@@ -74,7 +75,7 @@ export const socialLinks = [
   {
     label: "TikTok",
     href: "https://www.tiktok.com/@ifedolapo_?_r=1&_t=ZS-94YGC7ctFKv",
-    Icon: Zap, // Using Zap for TikTok flavor or similar
+    Icon: Zap, 
   },
 ];
 
@@ -111,7 +112,7 @@ export const softSkills = [
   },
   {
     title: "Brand Growth",
-    description: "Founder of Dola'f Fashion Collections, I understand the merchant side of business growth.",
+    description: "Founder of Dola's Collection, I understand the merchant side of business growth.",
     Icon: Zap,
     color: "amber",
   },

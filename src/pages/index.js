@@ -108,11 +108,11 @@ export default function FaithPortfolio() {
 
         <main>
           <Hero config={siteConfig} theme={theme} />
-          <About config={siteConfig} theme={theme} socialLinks={socialLinks} />
+          {/* <About config={siteConfig} theme={theme} socialLinks={socialLinks} />
           <Skills skills={skills} theme={theme} />
           <Projects projects={allProjects} theme={theme} />
           <DolaSection theme={theme} links={dolaLinks} />
-          <Contact config={siteConfig} theme={theme} />
+          <Contact config={siteConfig} theme={theme} /> */}
         </main>
 
         <Footer 

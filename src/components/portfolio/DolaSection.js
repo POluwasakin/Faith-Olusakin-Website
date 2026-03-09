@@ -41,8 +41,8 @@ export default function DolaSection({ theme, links }) {
             <div className="relative aspect-square max-w-[400px] mx-auto group">
               <div className="absolute inset-0 bg-stone-200 rounded-[2rem] overflow-hidden border-4 border-white shadow-xl">
                  <img 
-                   src="/logo.png" 
-                   alt="Dola'f Fashion Logo" 
+                   src="/dolasfashioncollectionlogo.webp" 
+                   alt="Dola's Collection Logo" 
                    className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700"
                  />
               </div>

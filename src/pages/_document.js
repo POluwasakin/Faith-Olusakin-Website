@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         {/* Global meta tags */}
         <meta charSet="UTF-8" />
-        <meta name="author" content="Praise Oluwasakin" />
+        <meta name="author" content="Faith Olusakin" />
 
         {/* Open Graph defaults */}
         <meta property="og:type" content="website" />

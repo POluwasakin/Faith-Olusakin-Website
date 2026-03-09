@@ -4,24 +4,24 @@ import Head from "next/head";
 import { DefaultSeo } from "next-seo";
 
 const DEFAULT_SEO = {
-  title: "Praise Oluwasakin | Frontend & Shopify Developer",
+  title: "Faith Olusakin | Elite Shopify Expert",
   description:
-    "Frontend & Shopify developer helping e‑commerce brands ship fast, conversion-focused stores with React, Next.js, Tailwind CSS, and Shopify Liquid.",
+    "Elite Shopify Expert helping e‑commerce brands grow and scale with conversion-focused, real-world strategies.",
   openGraph: {
     type: "website",
     url: "https://praise-oluwasakin-website.vercel.app/",
-    title: "Praise Oluwasakin | Frontend & Shopify Developer",
+    title: "Faith Olusakin | Elite Shopify Expert",
     description:
-      "Frontend & Shopify developer helping e‑commerce and DTC brands ship modern, high-performing storefronts with React, Next.js, Tailwind CSS, and Shopify.",
+      "Elite Shopify Expert with 4+ years experience helping businesses launch and scale profitable Shopify stores.",
     images: [
       {
         url: "https://praise-oluwasakin-website.vercel.app/profile.webp",
         width: 1200,
         height: 630,
-        alt: "Praise Oluwasakin Portfolio Preview",
+        alt: "Faith Olusakin Portfolio Preview",
       },
     ],
-    site_name: "Praise Oluwasakin Portfolio",
+    site_name: "Faith Olusakin Portfolio",
   },
   twitter: {
     handle: "@mayorcodes",
@@ -42,14 +42,14 @@ export default function App({ Component, pageProps }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Praise Oluwasakin",
+              name: "Faith Olusakin",
               url: "https://praise-oluwasakin-website.vercel.app/",
               sameAs: [
                 "https://twitter.com/mayorcodes",
-                "https://www.linkedin.com/in/praise-oluwasakin-409306239/",
-                "https://github.com/Praiseoluwasakin",
+                "https://www.linkedin.com/in/faith-olusakin-1b9654225",
+                "https://www.upwork.com/freelancers/~01f04ccc60e6bc595f",
               ],
-              jobTitle: "Frontend Developer & Shopify Expert",
+              jobTitle: "Elite Shopify Expert",
               // "birthDate": "YYYY-10-15" // optional - add a full YYYY if you want it in structured data
             }),
           }}

@@ -90,7 +90,7 @@ export default function BirthdayBalloons() {
 
   useEffect(() => {
     const today = new Date();
-    const isTodayTheBirthday = today.getMonth() === 9 && today.getDate() === 15;
+    const isTodayTheBirthday = today.getMonth() === 2 && today.getDate() === 22;
     setIsBirthday(isTodayTheBirthday);
 
     if (isTodayTheBirthday) {

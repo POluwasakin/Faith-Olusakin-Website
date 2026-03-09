@@ -38,7 +38,7 @@ export default function Footer({ config, theme, socialLinks, navItems }) {
         </div>
         
         <div className="pt-8 border-t border-stone-200 text-center text-xs font-bold uppercase tracking-[0.2em] opacity-30">
-          © {new Date().getFullYear()} {config.name}. Built with Precision in Lagos.
+          © {new Date().getFullYear()} {config.name}. Founder of Dola&apos;s Collection.
         </div>
       </div>
     </footer>

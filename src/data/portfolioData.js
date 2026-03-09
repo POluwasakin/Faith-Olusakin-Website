@@ -25,7 +25,7 @@ export const siteConfig = {
   description: "Elite Shopify Expert & Frontend Developer helping brands grow with conversion-focused stores. Founder of Dola's Collection.",
   deploymentUrl: null, 
   phone: "0707 512 5812",
-  email: "faitholusakin@gmail.com",
+  email: "Oluwasakinfaith6@gmail.com",
   location: "Lagos, Nigeria",
   profileImg: "/faith-profile.jpg",
 };

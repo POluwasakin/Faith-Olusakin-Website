@@ -5,11 +5,6 @@ export default function Hero({ config, theme }) {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden py-20"
-      style={{ backgroundColor: theme.bg }}
-    >
-    <section 
-      id="home" 
       className="relative min-h-screen flex items-center overflow-hidden py-24"
       style={{ backgroundColor: theme.bg }}
     >
@@ -74,7 +69,6 @@ export default function Hero({ config, theme }) {
 
         </div>
       </div>
-    </section>
     </section>
   );
 }

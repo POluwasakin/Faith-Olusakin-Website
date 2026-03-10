@@ -9,16 +9,16 @@ const DEFAULT_SEO = {
     "Elite Shopify Expert helping e‑commerce brands grow and scale with conversion-focused, real-world strategies.",
   openGraph: {
     type: "website",
-    url: "https://praise-oluwasakin-website.vercel.app/",
+    url: "https://faitholusakinwebsite.vercel.app/",
     title: "Faith Olusakin | Elite Shopify Expert",
     description:
       "Elite Shopify Expert with 4+ years experience helping businesses launch and scale profitable Shopify stores.",
     images: [
       {
-        url: "/portfolio.png",
+        url: "/faith-profile.jpg",
         width: 1200,
         height: 630,
-        alt: "Faith Olusakin Portfolio Preview",
+        alt: "Faith Olusakin",
       },
     ],
     site_name: "Faith Olusakin Portfolio",
@@ -43,14 +43,14 @@ export default function App({ Component, pageProps }) {
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Faith Olusakin",
-              url: "https://praise-oluwasakin-website.vercel.app/",
+              url: "https://faitholusakinwebsite.vercel.app/",
               sameAs: [
                 "https://x.com/ifedolapoolusa1",
                 "https://www.linkedin.com/in/faith-olusakin-1b9654225",
                 "https://www.upwork.com/freelancers/~01f04ccc60e6bc595f",
               ],
               jobTitle: "Elite Shopify Expert",
-              // "birthDate": "YYYY-10-15" // optional - add a full YYYY if you want it in structured data
+              "birthDate": "2000-2-22" // optional - add a full YYYY if you want it in structured data
             }),
           }}
         />

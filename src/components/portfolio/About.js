@@ -38,7 +38,7 @@ export default function About({ config, theme, socialLinks }) {
                 I don’t believe in “just building stores.” I build <strong>strategic, conversion-focused experiences</strong> that turn visitors into loyal customers.
               </p>
               <p>
-                As the <strong>Founder of Dola&apos;s Collection</strong>, I understand the merchant&apos;s journey first-hand.
+                As the <strong>Founder of Dola Fashion Collections</strong>, I understand the merchant&apos;s journey first-hand.
               </p>
             </div>
             

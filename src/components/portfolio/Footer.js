@@ -37,8 +37,9 @@ export default function Footer({ config, theme, socialLinks, navItems }) {
           </div>
         </div>
         
-        <div className="pt-8 border-t border-stone-200 text-center text-xs font-bold uppercase tracking-[0.2em] opacity-30">
-          © {new Date().getFullYear()} {config.name}. Founder of Dola&apos;s Collection.
+        <div className="pt-8 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-[0.2em] opacity-30">
+          <p>© {new Date().getFullYear()} {config.name}. Founder of Dola Fashion Collections.</p>
+          <p>Built by <a href="https://praise-oluwasakin-website.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 underline decoration-dotted">Praise Oluwasakin</a></p>
         </div>
       </div>
     </footer>

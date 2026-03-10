@@ -24,7 +24,7 @@ import { FaUpwork } from "react-icons/fa6";
 export const siteConfig = {
   name: "Faith Olusakin",
   title: "Faith Olusakin | Elite Shopify Expert & Frontend Developer",
-  description: "Elite Shopify Expert & Frontend Developer helping brands grow with conversion-focused stores. Founder of Dola's Collection.",
+  description: "Elite Shopify Expert & Frontend Developer helping brands grow with conversion-focused stores. Founder of Dola Fashion Collections.",
   deploymentUrl: null, 
   phone: "0707 512 5812",
   email: "ifedolapoolusakin@gmail.com",
@@ -49,7 +49,7 @@ export const navItems = [
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
   { id: "services", label: "Services" },
-  { id: "dola", label: "Dola's Collection" },
+  { id: "dola", label: "Dola Fashion Collections" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -82,6 +82,7 @@ export const socialLinks = [
 ];
 
 export const dolaLinks = {
+  website: "https://dolafashioncollection.com/",
   instagram: "https://www.instagram.com/dolafashioncollections",
   tiktok: "https://www.tiktok.com/@dolafashioncollections",
   jumia: "https://www.jumia.com.ng/dola-fashion-collections/",

@@ -1,5 +1,6 @@
 import React from 'react';
-import { ShoppingCart, Instagram, Facebook, Palette } from 'lucide-react';
+import { ShoppingCart, Instagram, Facebook, Palette, Globe } from 'lucide-react';
+import Image from 'next/image';
 
 export default function DolaSection({ theme, links }) {
   return (
@@ -11,11 +12,11 @@ export default function DolaSection({ theme, links }) {
           
           <div className="flex-1 relative z-10 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-white rounded-full border border-stone-100 shadow-sm italic font-serif text-sm">
-              <ShoppingCart className="w-4 h-4" style={{ color: theme.palette[1] }} /> Founder of Dola&apos;s Collection
+              <ShoppingCart className="w-4 h-4" style={{ color: theme.palette[1] }} /> Founder of Dola Fashion Collections
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-              Dola&apos;s Collection <br /><span style={{ color: theme.primary }}>Brand</span>
+              Dola Fashion <br /><span style={{ color: theme.primary }}>Collections</span>
             </h2>
             
             <div className="text-lg opacity-80 space-y-4 mb-10 max-w-xl">
@@ -26,7 +27,10 @@ export default function DolaSection({ theme, links }) {
             </div>
 
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              <a href={links.jumia} target="_blank" rel="noopener noreferrer" className="btn-vintage">Shop Jumia</a>
+              <a href={links.website} target="_blank" rel="noopener noreferrer" className="btn-vintage flex items-center gap-2">
+                <Globe className="w-4 h-4" /> Visit Website
+              </a>
+              <a href={links.jumia} target="_blank" rel="noopener noreferrer" className="btn-vintage secondary">Shop Jumia</a>
               <a href={links.instagram} target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-white border border-stone-100 hover:shadow-lg transition-all" title="Instagram">
                 <Instagram className="w-5 h-5" />
               </a>
@@ -40,19 +44,20 @@ export default function DolaSection({ theme, links }) {
             {/* Logo Display Area */}
             <div className="relative aspect-square max-w-[400px] mx-auto group">
               <div className="absolute inset-0 bg-stone-200 rounded-[2rem] overflow-hidden border-4 border-white shadow-xl">
-                 <img 
+                 <Image 
                    src="/dolasfashioncollectionlogo.webp" 
-                   alt="Dola's Collection Logo" 
-                   className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700"
+                   alt="Dola Fashion Collections Logo" 
+                   fill
+                   className="object-contain p-8 group-hover:scale-110 transition-transform duration-700"
                  />
               </div>
-              <img 
+              <Image 
                 src="/dolaf-shoes.png" 
                 alt="Ladies Shoes" 
-                className="absolute inset-0 w-full h-full object-cover rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                fill
+                className="object-cover rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700"
               />
             </div>
-            {/* <p className="mt-4 text-center text-xs font-bold uppercase tracking-widest opacity-40 italic">Hover to see our collection</p> */}
           </div>
         </div>
       </div>

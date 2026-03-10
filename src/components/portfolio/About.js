@@ -6,12 +6,22 @@ export default function About({ config, theme, socialLinks }) {
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col md:flex-row items-center gap-16">
           <div className="flex-1 w-full max-w-md">
-            <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden border-8 border-white shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700">
-              <img 
-                src="/faith-profile.jpg" 
-                alt={config.name} 
-                className="w-full h-full object-cover"
-              />
+            <div className="relative group">
+              <div className="absolute -inset-4 border border-stone-200 rounded-[2.5rem] rotate-3 group-hover:rotate-0 transition-transform duration-700" />
+              <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden border-8 border-white shadow-2xl transition-transform duration-700">
+                <img 
+                  src={config.profileImg} 
+                  alt={config.name} 
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                />
+              </div>
+              {/* Floating Badge */}
+              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-stone-100">
+                <div className="text-center">
+                  <p className="text-3xl font-serif italic mb-1" style={{ color: theme.primary }}>4+</p>
+                  <p className="text-[8px] font-bold uppercase tracking-widest opacity-40">Years of Luxury Experience</p>
+                </div>
+              </div>
             </div>
           </div>
           

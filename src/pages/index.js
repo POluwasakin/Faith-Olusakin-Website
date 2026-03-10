@@ -10,6 +10,7 @@ import Projects from '@/components/portfolio/Projects';
 import DolaSection from '@/components/portfolio/DolaSection';
 import Contact from '@/components/portfolio/Contact';
 import Footer from '@/components/portfolio/Footer';
+import BirthdaySurprise from '@/components/birthday-balloons';
 
 // Data
 import { 
@@ -57,6 +58,7 @@ export default function FaithPortfolio() {
       </Head>
 
       <div className="min-h-screen selection:bg-rose-200">
+        <BirthdaySurprise />
         {/* Navigation Bar */}
         <nav 
           className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${

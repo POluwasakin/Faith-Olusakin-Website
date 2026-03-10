@@ -1,206 +1,102 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Heart, X } from "lucide-react";
 
-// Modernized balloon palette
-const BALLOON_COLORS = [
-  "from-pink-400 to-rose-500 shadow-rose-600",
-  "from-yellow-300 to-amber-400 shadow-amber-500",
-  "from-blue-400 to-sky-500 shadow-sky-600",
-  "from-green-400 to-emerald-500 shadow-emerald-600",
-  "from-purple-400 to-fuchsia-500 shadow-fuchsia-600",
-];
-
-// 🎉 Confetti piece component
-const ConfettiBurst = ({ x, y }) => {
-  const pieces = Array.from({ length: 12 });
-  return (
-    <div
-      className="absolute"
-      style={{ left: x, top: y, pointerEvents: "none" }}
-    >
-      {pieces.map((_, i) => (
-        <div
-          key={i}
-          className="absolute w-2 h-2 rounded-sm opacity-90"
-          style={{
-            backgroundColor: `hsl(${Math.random() * 360}, 80%, 60%)`,
-            animation: `confetti-burst 800ms ease-out forwards`,
-            animationDelay: `${Math.random() * 100}ms`,
-            transform: `rotate(${Math.random() * 360}deg)`,
-            left: "0",
-            top: "0",
-          }}
-        />
-      ))}
-    </div>
-  );
-};
-
-// 🎈 Balloon component
-const Balloon = ({ index, color, onPop }) => {
-  const [popped, setPopped] = useState(false);
-  const animationDuration = `${10 + (index % 5) * 2}s`;
-  const animationDelay = `${index * 0.8}s`;
-
-  // Handle pop event
-  const handleAnimationEnd = (e) => {
-    if (e.animationName === "float-up") {
-      setPopped(true);
-      onPop?.(); // Trigger confetti burst
-    }
-  };
-
-  if (popped) return null;
-
-  return (
-    <div
-      onAnimationEnd={handleAnimationEnd}
-      className={`
-        absolute left-[${Math.random() * 90}%] bottom-[-100px]
-        w-12 h-16 bg-gradient-to-br ${color}
-        rounded-[60%_60%_50%_50%/70%_70%_40%_40%]
-        shadow-lg opacity-0 animate-float-up transform
-      `}
-      style={{
-        animationDuration,
-        animationDelay,
-      }}
-    >
-      {/* Shine */}
-      <div className="absolute top-2 left-3 w-3 h-5 bg-white/50 rounded-full blur-[1px] opacity-80" />
-
-      {/* Knot */}
-      <div
-        className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0
-          border-l-[4px] border-r-[4px] border-t-[6px]
-          border-l-transparent border-r-transparent border-t-gray-800/60"
-      />
-
-      {/* String */}
-      <div className="absolute -bottom-7 left-1/2 w-[1px] h-8 bg-gray-700/50 animate-string-sway" />
-    </div>
-  );
-};
-
-export default function BirthdayBalloons() {
+export default function BirthdaySurprise() {
   const [isVisible, setIsVisible] = useState(false);
   const [isBirthday, setIsBirthday] = useState(false);
-  const [confetti, setConfetti] = useState([]);
+  const [shouldSow, setShouldShow] = useState(true);
 
   useEffect(() => {
     const today = new Date();
+    // March is 2 (0-indexed)
     const isTodayTheBirthday = today.getMonth() === 2 && today.getDate() === 22;
     setIsBirthday(isTodayTheBirthday);
 
     if (isTodayTheBirthday) {
-      setTimeout(() => setIsVisible(true), 300);
+      setTimeout(() => setIsVisible(true), 1500); // Delayed entrance for higher impact
     }
   }, []);
 
-  const handleBalloonPop = () => {
-    // Random confetti burst around the top area
-    const x = `${Math.random() * 90}vw`;
-    const y = `${Math.random() * 20}vh`;
-    const id = Math.random().toString(36).substring(7);
-    setConfetti((prev) => [...prev, { id, x, y }]);
-    setTimeout(
-      () => setConfetti((prev) => prev.filter((c) => c.id !== id)),
-      1000
-    );
-  };
+  if (!isBirthday || !shouldSow) return null;
 
-  if (!isBirthday) return null;
+  const currentYear = new Date().getFullYear();
+  const mainMessage = currentYear === 2026 ? "Happy Birthday Big Sis" : "Happy Birthday";
 
   return (
-    <>
-      {/* Balloons Layer */}
-      <div
-        aria-hidden="true"
-        className={`fixed inset-0 overflow-hidden pointer-events-none z-[9999] transition-all duration-1000 ${
-          isVisible ? "opacity-100" : "opacity-0"
-        }`}
+    <div
+      className={`fixed inset-0 z-[2000] flex items-center justify-center transition-all duration-1000 ${
+        isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}
+    >
+      {/* Immersive Backdrop */}
+      <div className="absolute inset-0 bg-stone-900/60 backdrop-blur-md" />
+      
+      {/* Close Button */}
+      <button 
+        onClick={() => setShouldShow(false)}
+        className="absolute top-10 right-10 z-[2001] text-white/50 hover:text-white transition-colors"
       >
-        {Array.from({ length: 20 }).map((_, i) => (
-          <Balloon
+        <X className="w-8 h-8" />
+      </button>
+
+      {/* Main Content Area */}
+      <div className="relative z-[2001] text-center px-6 max-w-4xl animate-fade-in-up">
+        {/* Animated Sparkles/Particles (Simplified for performance) */}
+        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-40 h-40 bg-rose-400/20 blur-3xl animate-pulse" />
+        
+        <div className="space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white/80 text-xs font-bold uppercase tracking-[0.3em]">
+            <Sparkles className="w-4 h-4 text-amber-300" /> A special moment
+          </div>
+          
+          <h1 className="text-6xl md:text-8xl font-serif italic text-white leading-tight tracking-tighter">
+            {mainMessage}<span className="text-rose-400">.</span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-white/70 font-light italic leading-relaxed max-w-2xl mx-auto">
+            Wishing you a year filled with as much beauty and elegance as the stores you build.
+          </p>
+
+          <div className="pt-10 flex flex-col items-center gap-4">
+            <div className="w-12 h-12 bg-white text-stone-900 rounded-full flex items-center justify-center animate-bounce shadow-xl">
+              <Heart className="w-6 h-6 fill-rose-500 text-rose-500" />
+            </div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.5em] text-white/30">
+              Courtesy Praise
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Floating Elements (Orchestrated) */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {[...Array(15)].map((_, i) => (
+          <div
             key={i}
-            index={i}
-            color={BALLOON_COLORS[i % BALLOON_COLORS.length]}
-            onPop={handleBalloonPop}
+            className="absolute rounded-full bg-gradient-to-br from-white/20 to-transparent blur-[2px] animate-float"
+            style={{
+              width: `${Math.random() * 40 + 10}px`,
+              height: `${Math.random() * 40 + 10}px`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDuration: `${Math.random() * 10 + 10}s`,
+              animationDelay: `${Math.random() * 5}s`,
+              opacity: Math.random() * 0.5,
+            }}
           />
         ))}
-        {confetti.map((c) => (
-          <ConfettiBurst key={c.id} x={c.x} y={c.y} />
-        ))}
       </div>
 
-      {/* Header */}
-      <div
-        className={`fixed top-0 left-0 right-0 p-4 text-center 
-        bg-gradient-to-r from-yellow-200/80 to-amber-300/80
-        backdrop-blur-sm text-gray-900 font-semibold text-sm
-        shadow-md z-[10000] rounded-b-2xl border-b border-amber-400/40
-        transition-all duration-1000 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5"
-        }`}
-      >
-        <Sparkles className="inline-block w-4 h-4 mr-2 text-amber-700 animate-pulse" />
-        Happy Birthday, Praise! 🎉🎂💛
-      </div>
-
-      {/* Inline CSS Animations */}
       <style jsx global>{`
-        @keyframes float-up {
-          0% {
-            transform: translateY(100vh) scale(0.9);
-            opacity: 0;
-          }
-          10% {
-            opacity: 1;
-          }
-          50% {
-            transform: translateY(-30vh) scale(1);
-          }
-          100% {
-            transform: translateY(-120vh) scale(1.1);
-            opacity: 0;
-          }
+        @keyframes float {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          50% { transform: translateY(-100px) rotate(180deg); }
         }
-
-        @keyframes string-sway {
-          0%,
-          100% {
-            transform: rotate(0deg);
-          }
-          50% {
-            transform: rotate(2deg);
-          }
-        }
-
-        @keyframes confetti-burst {
-          0% {
-            transform: translate(0, 0) scale(1);
-            opacity: 1;
-          }
-          100% {
-            transform: translate(
-                calc(-40px + 80px * var(--rand-x, 0.5)),
-                calc(60px + 40px * var(--rand-y, 0.5))
-              )
-              rotate(720deg) scale(0.8);
-            opacity: 0;
-          }
-        }
-
-        .animate-float-up {
-          animation: float-up ease-in-out forwards;
-        }
-
-        .animate-string-sway {
-          animation: string-sway 2s ease-in-out infinite;
-          transform-origin: top center;
+        .animate-float {
+          animation: float linear infinite;
         }
       `}</style>
-    </>
+    </div>
   );
 }

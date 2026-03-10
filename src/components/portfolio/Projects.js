@@ -3,55 +3,46 @@ import { ExternalLink } from 'lucide-react';
 
 export default function Projects({ projects, theme }) {
   return (
-    <section id="services" className="py-24" style={{ backgroundColor: theme.bgMuted }}>
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 text-center md:text-left">
-          <div>
-            <span className="text-sm font-bold uppercase tracking-widest opacity-60">Curated Work</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-2 italic">Select <span style={{ color: theme.primary }}>Projects</span></h2>
-          </div>
-          <p className="max-w-md opacity-70">
-            A showcase of premium Shopify stores and frontend solutions built for brands around the globe.
-          </p>
+    <section id="services" className="py-32" style={{ backgroundColor: theme.bgMuted }}>
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="text-center mb-24 animate-fade-in">
+          <span className="text-[10px] font-bold uppercase tracking-[0.5em] opacity-30 block mb-6 px-4">Portfolio Archive</span>
+          <h2 className="text-4xl md:text-6xl font-serif italic mb-8">Selected <span className="opacity-40">Projects</span></h2>
+          <div className="h-px w-16 bg-stone-300 mx-auto opacity-30" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
           {projects.map((project, idx) => (
-            <div key={idx} className="card-vintage flex flex-col h-full animate-on-scroll">
-              <div 
-                className="w-12 h-12 mb-6 rounded-xl flex items-center justify-center bg-stone-100 shadow-inner transition-transform hover:scale-105" 
-                style={{ color: theme.palette[idx % theme.palette.length] }}
-              >
-                <project.Icon className="w-6 h-6" />
-              </div>
-              
-              <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-              
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tags.map(tag => (
-                  <span key={tag} className="text-[10px] font-bold uppercase tracking-widest px-2 py-1 bg-stone-100 rounded opacity-60">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              {project.url ? (
-                <div className="mt-auto pt-6 border-t border-stone-100">
-                  <a 
-                    href={project.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-bold hover:underline"
-                    style={{ color: theme.primary }}
-                  >
-                    View Project <ExternalLink className="w-3 h-3" />
-                  </a>
+            <div key={idx} className="group flex flex-col items-start animate-fade-in">
+              <div className="w-full aspect-[16/10] bg-stone-100/50 border border-stone-200/50 overflow-hidden mb-8 transition-all duration-700 hover:border-stone-300">
+                <div className="w-full h-full flex items-center justify-center opacity-20 grayscale group-hover:grayscale-0 group-hover:opacity-40 transition-all duration-1000">
+                  <project.Icon className="w-12 h-12 stroke-[1]" />
                 </div>
-              ) : (
-                <span className="mt-auto pt-6 border-t border-stone-100 text-xs italic opacity-40">
-                  Confidential / Offline
-                </span>
-              )}
+              </div>
+              
+              <div className="w-full">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-xl font-serif italic">{project.title}</h3>
+                  {project.url && (
+                    <a 
+                      href={project.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="opacity-20 hover:opacity-100 transition-opacity"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
+                </div>
+                
+                <div className="flex flex-wrap gap-4 opacity-30 mb-6">
+                  {project.tags.map(tag => (
+                    <span key={tag} className="text-[9px] font-bold uppercase tracking-widest border-b border-stone-300 pb-1">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           ))}
         </div>

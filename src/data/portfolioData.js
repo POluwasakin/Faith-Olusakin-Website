@@ -73,9 +73,9 @@ export const socialLinks = [
     Icon: Facebook,
   },
   {
-    label: "TikTok",
-    href: "https://www.tiktok.com/@ifedolapo_?_r=1&_t=ZS-94YGC7ctFKv",
-    Icon: Zap, 
+    label: "Twitter",
+    href: "https://x.com/ifedolapoolusa1",
+    Icon: Zap, // Using Zap for now as a placeholder or maybe add Twitter icon if available
   },
 ];
 

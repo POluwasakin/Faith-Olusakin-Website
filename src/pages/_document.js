@@ -10,7 +10,7 @@ export default function Document() {
 
         {/* Open Graph defaults */}
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/faith-profile.jpg" />
+        <meta property="og:image" content="/portfolio.png" />
 
         {/* Twitter defaults */}
         <meta name="twitter:card" content="summary_large_image" />

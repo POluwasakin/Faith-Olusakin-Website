@@ -15,7 +15,7 @@ const DEFAULT_SEO = {
       "Elite Shopify Expert with 4+ years experience helping businesses launch and scale profitable Shopify stores.",
     images: [
       {
-        url: "https://praise-oluwasakin-website.vercel.app/profile.webp",
+        url: "/portfolio.png",
         width: 1200,
         height: 630,
         alt: "Faith Olusakin Portfolio Preview",
@@ -24,8 +24,8 @@ const DEFAULT_SEO = {
     site_name: "Faith Olusakin Portfolio",
   },
   twitter: {
-    handle: "@mayorcodes",
-    site: "@mayorcodes",
+    handle: "@ifedolapoolusa1",
+    site: "@ifedolapoolusa1",
     cardType: "summary_large_image",
   },
 };
@@ -45,7 +45,7 @@ export default function App({ Component, pageProps }) {
               name: "Faith Olusakin",
               url: "https://praise-oluwasakin-website.vercel.app/",
               sameAs: [
-                "https://twitter.com/mayorcodes",
+                "https://x.com/ifedolapoolusa1",
                 "https://www.linkedin.com/in/faith-olusakin-1b9654225",
                 "https://www.upwork.com/freelancers/~01f04ccc60e6bc595f",
               ],

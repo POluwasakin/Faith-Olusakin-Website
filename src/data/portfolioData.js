@@ -18,6 +18,8 @@ import {
   MessageCircle,
   Truck
 } from "lucide-react";
+import { FaUpwork } from "react-icons/fa6";
+
 
 export const siteConfig = {
   name: "Faith Olusakin",
@@ -25,7 +27,7 @@ export const siteConfig = {
   description: "Elite Shopify Expert & Frontend Developer helping brands grow with conversion-focused stores. Founder of Dola's Collection.",
   deploymentUrl: null, 
   phone: "0707 512 5812",
-  email: "Oluwasakinfaith6@gmail.com",
+  email: "ifedolapoolusakin@gmail.com",
   location: "Lagos, Nigeria",
   profileImg: "/faith-profile.jpg",
 };
@@ -60,7 +62,7 @@ export const socialLinks = [
   {
     label: "Upwork",
     href: "https://www.upwork.com/freelancers/~01f04ccc60e6bc595f",
-    Icon: Globe, // We'll handle custom icons in the component or keep Lucide for now if user didn't provide SVG
+    Icon: FaUpwork, // We'll handle custom icons in the component or keep Lucide for now if user didn't provide SVG
   },
   {
     label: "Instagram",

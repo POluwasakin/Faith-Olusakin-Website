@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaUpwork } from "react-icons/fa6";
 
 export default function About({ config, theme, socialLinks }) {
   return (
@@ -43,9 +44,7 @@ export default function About({ config, theme, socialLinks }) {
                   title={label}
                 >
                   {label === "Upwork" ? (
-                    <svg className="w-5 h-5 fill-[#60d600]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18.561 3.235c-2.49 0-4.386 1.397-5.032 3.688L12.13 11.53c-1.185-1.956-2.023-4.102-2.317-5.914H6.551v8.08c0 1.944 1.572 3.52 3.52 3.52.898 0 1.705-.336 2.324-.888l1.378-4.475c.9 2.22 2.68 3.55 4.88 3.55 2.492 0 4.398-1.574 4.398-4.185 0-2.612-1.906-4.185-4.4-4.185zM6.551 6.516v4.613c0 1.944 1.572 3.52 3.52 3.52.898 0 1.705-.336 2.324-.888l1.378-4.475C12.873 7.067 11.026 5.67 8.536 5.67c-2.008 0-3.52 1.512-3.52 3.52 0 .445.084.87.237 1.259l1.3 2.126-.002-6.059z"/>
-                    </svg>
+                    <FaUpwork className="w-5 h-5 fill-[#60d600]" />
                   ) : label === "Twitter" || label === "X" ? (
                     <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.847h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.294 19.497h2.039L6.482 3.239H4.293L17.607 20.65z"/>
@@ -60,6 +59,10 @@ export default function About({ config, theme, socialLinks }) {
                 </a>
               ))}
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
           </div>
         </div>
       </div>

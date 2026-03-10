@@ -82,28 +82,62 @@ export default function FaithPortfolio() {
 
             {/* Mobile Menu Toggle */}
             <button 
-              className="lg:hidden p-2"
+              className="lg:hidden p-2 relative z-[110]"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle Menu"
             >
-              {mobileMenuOpen ? <X /> : <Menu />}
+              {mobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
             </button>
           </div>
 
-          {/* Mobile Nav Overlay */}
-          {mobileMenuOpen && (
-            <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-stone-100 p-8 flex flex-col gap-6 text-center animate-fade-in-up shadow-xl">
-              {navItems.map((item) => (
-                <a 
-                  key={item.id} 
-                  href={`#${item.id}`} 
-                  className="text-lg font-bold"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
+          {/* Premium Mobile Nav Overlay */}
+          <div 
+            className={`lg:hidden fixed inset-0 w-full h-screen bg-white/95 backdrop-blur-xl z-[100] transition-all duration-700 ease-in-out ${
+              mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
+            }`}
+          >
+            <div className="flex flex-col h-full pt-40 px-8">
+              <div className="space-y-8 mb-20">
+                {navItems.map((item, idx) => (
+                  <a 
+                    key={item.id} 
+                    href={`#${item.id}`} 
+                    className={`block text-5xl font-serif italic tracking-tighter transition-all duration-700 delay-[${idx * 100}ms] ${
+                      mobileMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                    style={{ transitionDelay: `${idx * 100}ms` }}
+                  >
+                    {item.label}<span style={{ color: theme.primary }} className="opacity-0 group-hover:opacity-100">.</span>
+                  </a>
+                ))}
+              </div>
+
+              <div className={`mt-auto mb-12 transition-all duration-1000 delay-500 ${
+                mobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+              }`}>
+                <p className="text-[10px] font-bold uppercase tracking-[0.4em] opacity-30 mb-6 font-sans">Get in Touch</p>
+                <div className="space-y-4">
+                  <a href={`mailto:${siteConfig.email}`} className="block text-lg font-light italic">{siteConfig.email}</a>
+                  <a href={`tel:${siteConfig.phone}`} className="block text-lg font-light italic">{siteConfig.phone}</a>
+                </div>
+
+                <div className="flex gap-6 mt-10">
+                  {socialLinks.slice(0, 4).map((link) => (
+                    <a 
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 rounded-full border border-stone-200"
+                    >
+                      <link.Icon className="w-5 h-5" />
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
-          )}
+          </div>
         </nav>
 
         <main>

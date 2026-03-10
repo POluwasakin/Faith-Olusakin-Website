@@ -3,33 +3,40 @@ import { FaUpwork } from "react-icons/fa6";
 
 export default function About({ config, theme, socialLinks }) {
   return (
-    <section id="about" className="py-32" style={{ backgroundColor: theme.bgMuted }}>
-      <div className="mx-auto max-w-4xl px-6">
-        <div className="flex flex-col md:flex-row items-center gap-24">
-          <div className="flex-1 w-full max-w-sm">
+    <section id="about" className="py-24" style={{ backgroundColor: theme.bgMuted }}>
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="flex flex-col md:flex-row items-center gap-16">
+          <div className="flex-1 w-full max-w-md">
             <div className="relative group">
-              <div className="absolute -inset-2 border border-stone-200 rounded-2xl rotate-2 group-hover:rotate-0 transition-transform duration-1000" />
-              <div className="relative aspect-[4/5] rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 border border-white/50 shadow-sm">
+              <div className="absolute -inset-4 border border-stone-200 rounded-[2.5rem] rotate-3 group-hover:rotate-0 transition-transform duration-700" />
+              <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden border-8 border-white shadow-2xl transition-transform duration-700">
                 <img 
                   src={config.profileImg} 
                   alt={config.name} 
-                  className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000"
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
                 />
+              </div>
+              {/* Floating Badge */}
+              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-stone-100">
+                <div className="text-center">
+                  <p className="text-3xl font-serif italic mb-1" style={{ color: theme.primary }}>4+</p>
+                  <p className="text-[8px] font-bold uppercase tracking-widest opacity-40">Years of Luxury Experience</p>
+                </div>
               </div>
             </div>
           </div>
           
           <div className="flex-1">
-            <h2 className="text-3xl md:text-4xl font-serif italic mb-10 leading-tight">Meet <span className="opacity-40">Faith Olusakin</span></h2>
-            <div className="space-y-8 text-lg font-light leading-relaxed opacity-50 italic">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 italic font-serif tracking-tight">Meet <span style={{ color: theme.palette[2] }}>Faith Olusakin</span></h2>
+            <div className="space-y-6 text-lg leading-relaxed opacity-90">
               <p>
-                A specialist in the Shopify ecosystem with over four years of experience crafting high-performance digital stores.
+                I am a highly dedicated <strong>Elite Shopify Expert</strong> with over 4 years of real-world experience helping businesses launch, grow, and scale profitable Shopify stores.
               </p>
               <p>
-                My approach blends technical precision with a conversion-first mindset, ensuring every brand I partner with is positioned for meaningful growth.
+                I don’t believe in “just building stores.” I build <strong>strategic, conversion-focused experiences</strong> that turn visitors into loyal customers. My background as a <strong>Frontend Developer</strong> allows me to push the boundaries of design and functionality where standard themes fall short.
               </p>
               <p>
-                As the mind behind Dola&apos;s Collection, I bring a unique merchant-led perspective to every project—understanding the delicate balance between design and operability.
+                As the <strong>Founder of Dola&apos;s Collection</strong>, I understand the merchant&apos;s journey first-hand. I know what it takes to manage inventory, drive sales, and build a brand from the ground up. This unique perspective is what sets my work apart.
               </p>
             </div>
             
@@ -59,10 +66,6 @@ export default function About({ config, theme, socialLinks }) {
                 </a>
               ))}
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
           </div>
         </div>
       </div>

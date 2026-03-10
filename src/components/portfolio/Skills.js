@@ -2,29 +2,26 @@ import React from 'react';
 
 export default function Skills({ skills, theme }) {
   return (
-    <section id="skills" className="py-32 bg-white relative">
-      <div className="mx-auto max-w-4xl px-6 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-4xl font-serif italic mb-4">Technical <span className="opacity-40">Proficiencies</span></h2>
-          <div className="h-px w-12 bg-stone-200 mx-auto" />
-        </div>
+    <section id="skills" className="py-24 bg-white relative">
+      <div className="mx-auto max-w-6xl px-6 relative z-10 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold mb-16 tracking-tight">Technical <span style={{ color: theme.primary }}>Expertise</span></h2>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-16 gap-x-12">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
           {skills.map((skill, idx) => (
             <div 
               key={skill.label}
-              className="group flex flex-col items-center text-center animate-fade-in"
-              style={{ animationDelay: `${idx * 0.1}s` }}
+              className="group p-8 rounded-3xl border border-stone-100 bg-stone-50/50 hover:bg-white hover:border-stone-200 hover:shadow-xl transition-all duration-500 flex flex-col items-center"
             >
               <div 
-                className="w-10 h-10 mb-6 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-700 opacity-30 group-hover:opacity-100"
-                style={{ color: theme.palette[idx % theme.palette.length] }}
+                className="w-16 h-16 mb-6 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110 duration-500 shadow-inner"
+                style={{ 
+                  backgroundColor: `${theme.palette[idx % theme.palette.length]}15`, 
+                  color: theme.palette[idx % theme.palette.length] 
+                }}
               >
-                <skill.Icon className="w-6 h-6 stroke-[1.5]" />
+                <skill.Icon className="w-8 h-8" />
               </div>
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 group-hover:opacity-100 transition-opacity">
-                {skill.label}
-              </span>
+              <span className="font-bold text-lg">{skill.label}</span>
             </div>
           ))}
         </div>

@@ -15,31 +15,31 @@ export default function Hero({ config, theme }) {
       <div className="absolute top-1/4 -left-20 w-96 h-96 rounded-full blur-[120px] opacity-20" style={{ backgroundColor: theme.primary }} />
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 rounded-full blur-[120px] opacity-10" style={{ backgroundColor: theme.secondary }} />
 
-      <div className="mx-auto max-w-4xl px-6 relative z-10 w-full text-center">
-        <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/50 backdrop-blur-sm border border-stone-100 mb-16 shadow-sm animate-fade-in">
-          <Sparkles className="w-3 h-3 opacity-40" />
-          <span className="text-[9px] font-bold tracking-[0.4em] uppercase opacity-40">Shopify Expert & Frontend Architect</span>
+      <div className="mx-auto max-w-5xl px-6 relative z-10 w-full text-center">
+        <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white border border-stone-100 mb-12 shadow-sm animate-fade-in">
+          <Sparkles className="w-3.5 h-3.5" style={{ color: theme.primary }} />
+          <span className="text-[10px] font-bold tracking-[0.3em] uppercase opacity-70">Elite Shopify Expert & Frontend Architect</span>
         </div>
         
-        <h1 className="text-5xl md:text-8xl font-medium leading-[1.1] tracking-tighter mb-12 font-serif italic text-stone-800">
-          <span className="block animate-fade-in-up" style={{ animationDelay: '0.1s' }}>Refining</span>
-          <span className="block animate-fade-in-up" style={{ animationDelay: '0.2s', color: theme.primary }}>Digital</span>
-          <span className="block animate-fade-in-up" style={{ animationDelay: '0.3s' }}>Experiences<span className="opacity-20">.</span></span>
+        <h1 className="text-6xl md:text-9xl font-bold leading-[0.85] tracking-tighter mb-12 font-serif italic">
+          <span className="block animate-fade-in-up" style={{ animationDelay: '0.1s' }}>Crafting</span>
+          <span className="block animate-fade-in-up mt-2" style={{ animationDelay: '0.2s', color: theme.primary }}>Digital</span>
+          <span className="block animate-fade-in-up mt-2" style={{ animationDelay: '0.3s' }}>Excellence<span style={{ color: theme.palette[1] }}>.</span></span>
         </h1>
         
-        <div className="max-w-xl mx-auto mb-20 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <p className="text-lg md:text-xl font-light leading-relaxed opacity-50 mb-10 italic">
-            Building conversion-focused Shopify stores with a meticulous approach to design and performance.
+        <div className="max-w-2xl mx-auto mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <p className="text-xl md:text-2xl font-light leading-relaxed opacity-70 mb-8 italic">
+            Transforming ambitious visions into high-converting Shopify experiences.
           </p>
-          <div className="h-px w-16 bg-stone-200 mx-auto" />
+          <div className="h-px w-24 bg-stone-300 mx-auto" />
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-10 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-          <a href="#contact" className="group py-4 px-10 text-[10px] font-bold tracking-[0.3em] uppercase bg-stone-900 text-white hover:bg-stone-800 transition-all rounded-full">
-            Inquire Now
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+          <a href="#contact" className="btn-vintage group py-5 px-12 flex items-center gap-4 text-sm tracking-widest uppercase bg-stone-900 text-white hover:bg-stone-800 transition-all rounded-full">
+            Start a Project <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
           </a>
-          <a href="#projects" className="text-[10px] font-bold uppercase tracking-[0.4em] hover:opacity-100 opacity-30 transition-all border-b border-transparent hover:border-stone-900 pb-2">
-            The Work
+          <a href="#projects" className="text-xs font-bold uppercase tracking-[0.4em] hover:opacity-100 opacity-50 transition-all border-b border-transparent hover:border-stone-900 pb-2">
+            View Work
           </a>
         </div>
 

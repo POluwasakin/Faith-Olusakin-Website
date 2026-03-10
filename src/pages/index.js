@@ -53,30 +53,30 @@ export default function FaithPortfolio() {
         <title>{siteConfig.title}</title>
         <meta name="description" content={siteConfig.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/logo.png" />
       </Head>
 
       <div className="min-h-screen selection:bg-rose-200">
         {/* Navigation Bar */}
         <nav 
-          className={`fixed top-0 left-0 w-full z-[100] transition-all duration-700 ${
-            isScrolled ? 'py-4 bg-white/90 backdrop-blur-md' : 'py-10'
+          className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
+            isScrolled ? 'py-4 bg-white/80 backdrop-blur-md shadow-sm' : 'py-8'
           }`}
         >
-          <div className="mx-auto max-w-5xl px-6 flex items-center justify-between">
-            <a href="#home" className="text-lg font-serif italic tracking-tighter opacity-80">
-              Faith<span className="opacity-20">.</span>
+          <div className="mx-auto max-w-6xl px-6 flex items-center justify-between">
+            <a href="#home" className="text-2xl font-bold tracking-tighter italic">
+              Faith<span style={{ color: theme.primary }}>.</span>
             </a>
 
             {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-12">
+            <div className="hidden lg:flex items-center gap-10">
               {navItems.map((item) => (
-                <a key={item.id} href={`#${item.id}`} className="text-[9px] font-bold uppercase tracking-[0.4em] opacity-30 hover:opacity-100 transition-opacity">
+                <a key={item.id} href={`#${item.id}`} className="nav-link text-sm uppercase tracking-widest">
                   {item.label}
                 </a>
               ))}
-              <a href="#contact" className="text-[9px] font-bold uppercase tracking-[0.4em] border border-stone-900 px-6 py-2.5 rounded-full hover:bg-stone-900 hover:text-white transition-all">
-                Hire
+              <a href="#contact" className="btn-vintage px-6 py-2.5 text-xs">
+                Hire Me
               </a>
             </div>
 
